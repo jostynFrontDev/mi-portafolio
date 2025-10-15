@@ -1,0 +1,301 @@
+/* --- Variables de Color y Estilos Globales --- */
+:root {
+    --dark-bg: #121212; /* Fondo principal oscuro */
+    --card-bg: #1e1e1e; /* Fondo de las tarjetas de producto */
+    --primary-blue: #007bff; /* Color de acento azul brillante */
+    --text-light: #f0f0f0; /* Color de texto principal */
+    --text-secondary: #a0a0a0; /* Color de texto secundario (descripciones) */
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Barra de Navegación --- */
+header {
+    /* NUEVO: La hacemos fija en la parte superior */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Nos aseguramos de que siempre esté por encima de todo */
+
+    /* El padding inicial (más grande) */
+    padding: 1.5rem 5%; 
+    background-color: transparent; /* Fondo transparente al inicio */
+    border-bottom: 1px solid transparent; /* Borde transparente al inicio */
+
+    /* NUEVO: Transición suave para todos los cambios */
+    transition: background-color 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+}
+
+/* NUEVO: Clase que se añadirá con JavaScript al hacer scroll */
+header.scrolled {
+    background-color: rgba(26, 26, 26, 0.85); /* Fondo oscuro semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto "cristal esmerilado" muy moderno */
+    padding: 0.8rem 5%; /* Padding más pequeño */
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle elevación */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: font-size 0.4s ease; /* Transición para el tamaño del logo */
+}
+
+/* Hacemos el logo un poco más pequeño cuando se hace scroll */
+header.scrolled .logo {
+    font-size: 1.3rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+/* -- NUEVO: Animación para los enlaces del menú -- */
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative; /* Necesario para la línea animada */
+    padding: 5px 0; /* Un poco de espacio para la línea */
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-blue);
+}
+
+/* La línea animada (pseudo-elemento) */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%; /* Inicia sin ancho */
+    height: 2px;
+    background-color: var(--primary-blue);
+    bottom: 0;
+    left: 50%; /* Inicia en el centro */
+    transform: translateX(-50%); /* Ayuda a centrarla correctamente */
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición suave para el ancho */
+}
+
+/* Al pasar el mouse, la línea crece al 100% */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Sección Principal (Hero) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4rem 5%;
+    min-height: 80vh;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+.hero-image img {
+    max-width: 350px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Animación para la imagen del robot */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* --- Sección de Productos --- */
+.product-section {
+    padding: 2rem 5%;
+}
+
+.product-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.product-section h3 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-grid {
+    display: grid;
+    /* Crea columnas automáticas que se ajustan al tamaño */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 2px solid transparent; /* Borde inicial transparente */
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    /* La transición es la clave para el efecto suave */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== AQUÍ ESTÁ EL EFECTO LLAMATIVO ===== */
+.product-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta */
+    border-color: var(--primary-blue); /* Cambia el color del borde */
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5); /* Crea el resplandor azul */
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.product-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    min-height: 50px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 1rem;
+}
+
+/* --- NUEVO: Animaciones al hacer Scroll --- */
+
+/*
+Esta es la clase que tendrán los elementos ANTES de ser animados.
+Estarán invisibles (opacity: 0) y ligeramente desplazados hacia abajo.
+*/
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* La transición suave es la clave para que el efecto se vea bien */
+}
+
+/*
+Esta clase se añadirá con JavaScript cuando el elemento sea visible.
+Hará que el elemento vuelva a su posición original y sea totalmente visible.
+*/
+.show {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Opcional: Podemos añadir un pequeño retraso a cada tarjeta para 
+que no aparezcan todas al mismo tiempo. Esto se ve muy profesional.
+Aquí le decimos que el segundo hijo tenga un retraso, el tercero otro, etc.
+*/
+/* Busca la regla .product-card que ya tienes y modifícala para que se vea así */
+.product-card {
+    background-color: var(--card-bg);
+    border: 2px solid transparent; 
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    
+    /* --- NUEVO: Propiedades para el efecto 3D --- */
+    transform-style: preserve-3d; /* Le decimos al navegador que los hijos de este elemento vivirán en un espacio 3D */
+    transform: perspective(1000px); /* Establece la perspectiva para que el efecto 3D sea visible */
+}
+
+/* No modificaremos el :hover aquí, porque Tilt.js se encargará de la transformación.
+   Pero podemos mantener el brillo para un efecto combinado.
+*/
+.product-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5); 
+    /* Quitamos el transform: translateY(-10px); para no interferir con Tilt.js */
+}
+
+/* --- NUEVO: Hacemos que los elementos internos "floten" --- */
+/* Seleccionamos la imagen, el título, el párrafo y el precio dentro de la tarjeta.
+   Los preparamos para la animación 3D.
+*/
+.product-card img,
+.product-card h4,
+.product-card p,
+.product-card .price {
+    transition: transform 0.4s ease-out; /* Una transición suave */
+    transform: translateZ(0); /* Los ponemos en una capa 3D inicial */
+}
+
+/* Al pasar el mouse sobre la tarjeta, los elementos internos se moverán hacia adelante */
+.product-card:hover img {
+    transform: translateZ(50px); /* La imagen "sale" más */
+}
+
+.product-card:hover h4 {
+    transform: translateZ(30px);
+}
+
+.product-card:hover p {
+    transform: translateZ(20px);
+}
+
+.product-card:hover .price {
+    transform: translateZ(40px);
+}
