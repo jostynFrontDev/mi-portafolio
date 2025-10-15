@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelos Disponibles | Motos Legendarias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-900 text-white">
+    
+    <script id="moto-api" type="application/json">
+    [
+        {
+            "id": 1,
+            "nombre": "Ducati Panigale V4 S",
+            "categoria": "deportiva",
+            "precio": "32,995",
+            "descripcion": "La máxima expresión del rendimiento deportivo de Ducati. Equipada con el motor Desmosedici Stradale, ofrece una potencia brutal combinada con una electrónica de vanguardia para dominar la pista.",
+            "imagen_principal": "https://placehold.co/600x400/CC0000/ffffff?text=Ducati+Panigale+V4S",
+            "galeria": [
+                "https://placehold.co/1280x720/CC0000/ffffff?text=Panigale+V4S+Vista+Lateral",
+                "https://placehold.co/1280x720/3d0303/ffffff?text=Panigale+V4S+Motor",
+                "https://placehold.co/1280x720/660000/ffffff?text=Panigale+V4S+Frontal"
+            ],
+            "especificaciones": {
+                "Motor": "Desmosedici Stradale V4, 4 Tiempos",
+                "Cilindrada": "1,103 cc",
+                "Potencia Máxima": "215.5 HP @ 13,000 rpm",
+                "Torque Máximo": "123.6 Nm @ 9,500 rpm",
+                "Sistema de Frenos": "ABS Cornering EVO con pinzas Brembo Stylema",
+                "Suspensión Delantera": "Horquilla Öhlins NPX 25/30 presurizada",
+                "Peso": "195.5 kg (en orden de marcha)"
+            }
+        },
+        {
+            "id": 2,
+            "nombre": "Kawasaki KLX 300R",
+            "categoria": "todoterreno",
+            "precio": "5,899",
+            "descripcion": "Diseñada para la diversión todoterreno. Es una moto ligera y ágil con un motor potente y suspensiones de largo recorrido, ideal para conquistar senderos y terrenos difíciles.",
+            "imagen_principal": "https://placehold.co/600x400/008000/ffffff?text=Kawasaki+KLX+300R",
+            "galeria": [
+                "https://placehold.co/1280x720/008000/ffffff?text=KLX+300R+En+Bosque",
+                "https://placehold.co/1280x720/004d00/ffffff?text=KLX+300R+Motor",
+                "https://placehold.co/1280x720/397339/ffffff?text=KLX+300R+Trasera"
+            ],
+            "especificaciones": {
+                "Motor": "4 Tiempos, monocilíndrico, DOHC",
+                "Cilindrada": "292 cc",
+                "Potencia Máxima": "25.8 HP (Aprox.)",
+                "Torque Máximo": "23.5 Nm (Aprox.)",
+                "Sistema de Frenos": "Disco hidráulico, delantero y trasero",
+                "Suspensión Delantera": "Horquilla invertida de 43 mm",
+                "Peso": "137 kg (en orden de marcha)"
+            }
+        },
+        {
+            "id": 3,
+            "nombre": "BMW R 1250 GS",
+            "categoria": "urbana",
+            "precio": "18,995",
+            "descripcion": "El ícono de las motos de aventura. Combina un potente motor Bóxer con la máxima comodidad y tecnología de asistencia al conductor, siendo tan apta para viajes largos como para la ciudad.",
+            "imagen_principal": "https://placehold.co/600x400/0000FF/ffffff?text=BMW+R+1250+GS",
+            "galeria": [
+                "https://placehold.co/1280x720/0000FF/ffffff?text=R+1250+GS+Aventura",
+                "https://placehold.co/1280x720/00008b/ffffff?text=R+1250+GS+Bóxer",
+                "https://placehold.co/1280x720/3333FF/ffffff?text=R+1250+GS+Instrumentación"
+            ],
+            "especificaciones": {
+                "Motor": "Bóxer de 2 cilindros, 4 Tiempos, refrigerado por aire/líquido",
+                "Cilindrada": "1,254 cc",
+                "Potencia Máxima": "136 HP @ 7,750 rpm",
+                "Torque Máximo": "143 Nm @ 6,250 rpm",
+                "Sistema de Frenos": "BMW Motorrad Full Integral ABS Pro",
+                "Suspensión Delantera": "Telelever, amortiguador central",
+                "Peso": "268 kg (en orden de marcha)"
+            }
+        },
+        {
+            "id": 4,
+            "nombre": "Harley-Davidson Fat Bob 114",
+            "categoria": "cruiser",
+            "precio": "18,799",
+            "descripcion": "Un estilo robusto y agresivo con un rendimiento moderno. El motor Milwaukee-Eight 114 ofrece un torque masivo para una aceleración emocionante en cualquier autopista.",
+            "imagen_principal": "https://placehold.co/600x400/FFD700/000000?text=Fat+Bob+114",
+            "galeria": [
+                "https://placehold.co/1280x720/FFD700/000000?text=Fat+Bob+114+Persecución",
+                "https://placehold.co/1280x720/B8860B/ffffff?text=Fat+Bob+114+Motor",
+                "https://placehold.co/1280x720/DAA520/000000?text=Fat+Bob+114+Luces"
+            ],
+            "especificaciones": {
+                "Motor": "Milwaukee-Eight 114, V-Twin",
+                "Cilindrada": "1,868 cc",
+                "Potencia Máxima": "93 HP (Aprox.)",
+                "Torque Máximo": "161 Nm @ 3,000 rpm",
+                "Sistema de Frenos": "Disco con ABS estándar",
+                "Transmisión": "Correa",
+                "Peso": "306 kg (en orden de marcha)"
+            }
+        }
+    ]
+</script>
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-wider uppercase">Legendarias</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#inicio" class="hover:text-amber-400 transition">Inicio</a>
+                <a href="modelos.html" class="hover:text-amber-400 transition">Modelos</a>
+                <a href="index.html#galeria" class="hover:text-amber-400 transition">Galería</a>
+                <a href="tecnologia.html" class="hover:text-amber-400 transition">Tecnología</a>
+                <a href="contacto.html" class="hover:text-amber-400 transition">Contacto</a>
+            </div>
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-button" class="ml-2 p-2">
+                    <span class="sr-only">Abrir menú</span>
+                    <div class="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div class="w-6 h-0.5 bg-white"></div>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
+            <a href="#modelos" class="block py-3 px-6 text-center hover:bg-gray-800">Modelos</a>
+            <a href="index.html#galeria" class="block py-3 px-6 text-center hover:bg-gray-800">Galería</a>
+            <a href="index.html#tecnologia" class="block py-3 px-6 text-center hover:bg-gray-800">Tecnología</a>
+            <a href="contacto.html" class="block py-3 px-6 text-center hover:bg-gray-800">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="modelos" class="pt-20 md:pt-28 py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h1 class="text-4xl md:text-5xl font-bold">Explora Nuestra Flota Completa</h1>
+                    <p class="mt-4 text-lg text-gray-400">Encuentra la moto perfecta para tu estilo de vida y aventura.</p>
+                </div>
+                
+                <div id="filters" class="flex flex-wrap justify-center gap-3 mb-12 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="deportiva">Deportivas</button>
+                    <button class="filter-btn" data-filter="todoterreno">Todoterreno</button>
+                    <button class="filter-btn" data-filter="urbana">Urbanas</button>
+                    <button class="filter-btn" data-filter="cruiser">Cruiser</button>
+                </div>
+
+                <div id="moto-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    </div>
+            </div>
+        </section>
+        
+        <section class="py-20 bg-gray-800 text-center animate-on-scroll" style="transition-delay: 0.4s;">
+            <p class="text-xl text-gray-300 mb-6">¿Listo para dar el siguiente paso?</p>
+            <a href="contacto.html" class="inline-block bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105 text-lg">
+                Solicitar Cotización Ahora
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-10">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p class="text-lg font-bold tracking-wider uppercase mb-4">Legendarias</p>
+            <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="moto-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4">
+        <div id="modal-content" class="bg-gray-900 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative text-white transform scale-95 transition-transform duration-300">
+            </div>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>

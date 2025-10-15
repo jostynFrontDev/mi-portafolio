@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto | Motos Legendarias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-900 text-white">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-wider uppercase">Legendarias</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#inicio" class="hover:text-amber-400 transition">Inicio</a>
+                <a href="index.html#modelos" class="hover:text-amber-400 transition">Modelos</a>
+                <a href="index.html#galeria" class="hover:text-amber-400 transition">Galería</a>
+                <a href="index.html#tecnologia" class="hover:text-amber-400 transition">Tecnología</a>
+                <a href="#contacto" class="hover:text-amber-400 transition">Contacto</a>
+            </div>
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-button" class="ml-2 p-2">
+                    <span class="sr-only">Abrir menú</span>
+                    <div class="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div class="w-6 h-0.5 bg-white"></div>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
+            <a href="index.html#modelos" class="block py-3 px-6 text-center hover:bg-gray-800">Modelos</a>
+            <a href="index.html#galeria" class="block py-3 px-6 text-center hover:bg-gray-800">Galería</a>
+            <a href="tecnologia.html" class="hover:text-amber-400 transition">Tecnología</a>
+            <a href="#contacto" class="block py-3 px-6 text-center hover:bg-gray-800">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="contacto" class="py-20 md:py-28 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold">Inicia tu Aventura</h2>
+                    <p class="mt-4 text-lg text-gray-400">Ponte en contacto con nosotros para una cotización o una prueba de manejo.</p>
+                </div>
+
+                <div id="form-message-container" class="max-w-xl mx-auto hidden">
+                    </div>
+
+                <form id="contact-form" class="max-w-xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <input type="text" placeholder="Nombre Completo" class="form-input animate-on-scroll" style="transition-delay: 0.1s;" required>
+                        <input type="email" placeholder="Correo Electrónico" class="form-input animate-on-scroll" style="transition-delay: 0.2s;" required>
+                    </div>
+                    <select id="model-select" class="form-input mb-6 animate-on-scroll" style="transition-delay: 0.3s;" required>
+                        <option value="" disabled selected>Selecciona un modelo de interés</option>
+                        </select>
+                    <textarea placeholder="Tu mensaje..." rows="5" class="form-input mb-6 animate-on-scroll" style="transition-delay: 0.4s;" required></textarea>
+                    <button type="submit" id="submit-button" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105 text-lg animate-on-scroll" style="transition-delay: 0.5s;">
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-10">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p class="text-lg font-bold tracking-wider uppercase mb-4">Legendarias</p>
+            <p>&copy; <span id="year"></span> Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script id="moto-api" type="application/json">
+    [
+        {"id": 1, "nombre": "Vortex RZ-800", "categoria": "deportiva", "precio": "9,500"},
+        {"id": 2, "nombre": "Nomad 450", "categoria": "todoterreno", "precio": "6,200"},
+        {"id": 3, "nombre": "Urban Legacy 250", "categoria": "urbana", "precio": "4,100"},
+        {"id": 4, "nombre": "Spectre GT 1200", "categoria": "cruiser", "precio": "12,800"}
+    ]
+    </script>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>

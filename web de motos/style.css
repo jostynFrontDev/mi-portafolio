@@ -1,0 +1,188 @@
+/* Estilos base y fuentes */
+body {
+    font-family: 'Inter', sans-serif;
+    /* --- Nuevas propiedades para el fondo oscuro --- */
+    background-color: #121212; /* O el color exacto gris/negro que usaste en la principal */
+    color: #f5f5f5;           /* Color de texto blanco/claro para todo el contenido */
+    margin: 0;                /* Elimina el margen por defecto del navegador */
+    padding: 0;               /* Elimina el padding por defecto */
+}
+
+/* Sección Hero */
+#hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Ejemplo de CSS para mostrar la imagen de fondo correctamente */
+.tu-camino-section {
+    background-image: url('ruta/a/tu/imagen.jpg'); /* Cambia la ruta por la tuya */
+    background-size: cover;        /* La imagen cubre toda la sección */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite la imagen */
+    min-height: 400px;             /* Ajusta la altura según lo que necesites */
+    position: relative;            /* Permite superponer contenido */
+    z-index: 1;
+}
+
+
+/* Efecto Glassmorphism para el Header con scroll */
+.header-scrolled {
+    background-color: rgba(17, 24, 39, 0.8); /* bg-gray-900 con opacidad */
+    backdrop-filter: blur(10px);
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Botones de filtro */
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: #374151; /* bg-gray-700 */
+    color: #ffffff;
+}
+.filter-btn:hover {
+    background-color: #4B5563; /* bg-gray-600 */
+}
+.filter-btn.active {
+    background-color: #F59E0B; /* bg-amber-500 */
+    color: #111827; /* text-gray-900 */
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+}
+
+/* Tarjetas de Modelos */
+.moto-card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.moto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3), 0 10px 10px -5px rgba(0,0,0,0.1);
+}
+
+/* Galería Estilo Masonry */
+.masonry-gallery {
+    column-count: 1;
+    column-gap: 1rem;
+}
+@media (min-width: 640px) {
+    .masonry-gallery { column-count: 2; }
+}
+@media (min-width: 1024px) {
+    .masonry-gallery { column-count: 3; }
+}
+
+/* Tarjetas de Tecnología */
+.tech-card {
+    background-color: #1F2937; /* bg-gray-800 */
+    border: 1px solid #374151; /* border-gray-700 */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.tech-card:hover {
+    background-color: #374151; /* bg-gray-700 */
+    border-color: #F59E0B; /* border-amber-500 */
+}
+
+/* Estilos de Formularios */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background-color: #1f2937;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #f59e42;
+    background-color: #111827;
+}
+
+/* Botones */
+button[type="submit"] {
+    background-color: #f59e42;
+    color: #1f2937;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: transform 0.3s, background-color 0.3s;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #d97706;
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación al hacer scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Estilos Adicionales para los Filtros --- */
+.filter-btn {
+    /* ... Tus estilos existentes ... */
+    background-color: #374151; /* Color base gris */
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 600; /* font-semibold */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Aseguramos la transición para el hover */
+}
+
+.filter-btn:hover {
+    background-color: #FBBF24; /* bg-amber-400 */
+    color: #111827; /* texto oscuro */
+}
+
+.filter-btn.active {
+    background-color: #F59E0B; /* bg-amber-500 */
+    color: #111827;
+    /* Efecto de sombra sutil para el botón activo */
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* --- Animación de las Tarjetas de Moto --- */
+/* Mejora la animación al pasar el ratón */
+.moto-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Se levanta y agranda ligeramente */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.moto-card {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Asegura la transición base */
+}
+
+/* --- Animación de Transición de Modelos al Filtrar (Fade In/Out) --- */
+#moto-grid {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#moto-grid.fade-out {
+    opacity: 0;
+}
