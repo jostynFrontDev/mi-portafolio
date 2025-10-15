@@ -1,0 +1,171 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Front-End</title>
+    <!-- Incluye el CDN de Tailwind CSS para un estilizado rápido y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluye el CDN de Font Awesome para los íconos de habilidades -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Configuración personalizada de Tailwind para un diseño elegante -->
+    <script src="styles.js"></script>
+    <!-- Enlaza tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+
+</head>
+<body class="bg-primary-dark text-light-text font-sans">
+    
+    <!-- Efecto de brillo que sigue el cursor -->
+    <div class="glow-cursor-effect" id="glow-cursor"></div>
+
+    <!-- Sección de Cabecera (Hero) -->
+    <header class="relative overflow-hidden pt-20 pb-32 md:pt-40 md:pb-52 text-center">
+        <!-- Fondo con efecto de partículas animadas -->
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                <span id="typing-text-1"></span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-dark-text">
+                <span id="typing-text-2"></span>
+            </p>
+            <div class="mt-8 flex justify-center hero-text-animation hero-text-animation-delay">
+                <!-- Imagen de perfil del usuario -->
+                <img src="perfil.png" alt="Tu Foto de Perfil" class="profile-img">
+            </div>
+            <a href="#proyectos" class="mt-10 inline-block glow-button" id="smooth-scroll-button">
+                Ver mis Proyectos
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección de "Quién Soy" -->
+    <section id="quien-soy" class="section bg-secondary-dark rounded-b-3xl fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Quién Soy?</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:space-x-12">
+                <div class="w-full md:w-1/2 text-left">
+                    <p class="text-dark-text text-lg">
+                        Hola, soy un desarrollador Front-End con pasión por crear interfaces de usuario atractivas y funcionales.
+                        Tengo experiencia en el desarrollo de sitios web responsive y aplicaciones interactivas.
+                        Me encanta aprender nuevas tecnologías y aplicar mis habilidades para resolver problemas del mundo real.
+                    </p>
+                    <a href="#contacto" class="mt-8 inline-block glow-button">
+                        Hablemos
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 w-full md:w-1/2 flex justify-center">
+                    <img src="photo.png" alt="Imagen de Quién Soy" class="rounded-xl shadow-lg w-full max-w-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="habilidades" class="section fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Mis Habilidades</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Habilidad: HTML -->
+                <div class="card p-6 flex flex-col items-center card-skill">
+                    <i class="fab fa-html5 text-5xl text-orange-500 mb-4 skill-icon transition-transform duration-300"></i>
+                    <h3 class="text-xl font-semibold">HTML</h3>
+                    <p class="text-dark-text mt-2">Creación de estructuras de páginas web semánticas y accesibles.</p>
+                </div>
+                <!-- Habilidad: CSS -->
+                <div class="card p-6 flex flex-col items-center card-skill">
+                    <i class="fab fa-css3-alt text-5xl text-blue-500 mb-4 skill-icon transition-transform duration-300"></i>
+                    <h3 class="text-xl font-semibold">CSS</h3>
+                    <p class="text-dark-text mt-2">Estilización, diseño responsivo y animaciones para una experiencia visual atractiva.</p>
+                </div>
+                <!-- Habilidad: JavaScript -->
+                <div class="card p-6 flex flex-col items-center card-skill">
+                    <i class="fab fa-js text-5xl text-yellow-500 mb-4 skill-icon transition-transform duration-300"></i>
+                    <h3 class="text-xl font-semibold">JavaScript</h3>
+                    <p class="text-dark-text mt-2">Desarrollo de funcionalidades interactivas y dinámicas en la web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos (ejemplo) -->
+    <section id="proyectos" class="section bg-secondary-dark rounded-t-3xl fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Mis Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="card overflow-hidden card-project">
+                    <img src="mezon.png" alt="Logo del restaurante El mezon de Carmen, nombre en estilo manuscrito amigable sobre fondo cálido, ambiente acogedor y hospitalario" class="rounded-full w-48 h-48 mx-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">El mezon de Carmen</h3>
+                        <p class="text-dark-text mt-2">"El mezon de carmen" es una proyecto Front-End creado para un bar de bebidas.</p>
+                        <a href="http://127.0.0.1:5500/el-mezon-de-carmen/index.html" class="mt-4 inline-block glow-button text-sm">Ver Proyecto</a>
+                    </div>
+                </div>              
+                <!-- Proyecto 2 -->
+                <div class="card overflow-hidden card-project">
+                    <img src="aplicacion.png" alt="Imagen del Proyecto 2" class="rounded-full w-48 h-48 mx-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">To-Do List</h3>
+                        <p class="text-dark-text mt-2">Una aplicacion web de listas de tareas simple y funcional, desarrollada con JavaScript,HTML y CSS. Permite a los usuarios agregar sus tareas diarias de manera eficiente.</p>
+                        <a href="http://127.0.0.1:5500/aplicacion%20de%20tarea/index.html" class="mt-4 inline-block glow-button text-sm">Ver Proyecto</a>
+                    </div>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="card overflow-hidden card-project">
+                    <img src="gorras.png" alt="Imagen del Proyecto 3" class="rounded-full w-48 h-48 mx-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Gorras Leon</h3>
+                        <p class="text-dark-text mt-2">Un catalogo de productos interactivo para la venta de gorras, diseñado con HTML, CSS y JavaScript para una interfaz de usuario atractiva. Incluye funciones para agregar articulos al carrito.</p>
+                        <a href="http://127.0.0.1:5500/web%20de%20gorras/index.html" class="mt-4 inline-block glow-button text-sm">Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="section fade-in">
+        <div class="container mx-auto px-4">
+            <div class="card p-8 lg:p-12 text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">¡Hablemos!</h2>
+                <p class="text-dark-text mb-8">
+                    Estoy disponible para nuevos proyectos. Puedes contactarme directamente a través de mi correo electrónico, número de teléfono o mis redes sociales.
+                </p>
+
+                <!-- Información de contacto directo -->
+                <div class="flex flex-col space-y-4 mb-8">
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-envelope text-accent-blue text-xl"></i>
+                        <span class="text-lg">jostynm621@gmail.com</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone text-accent-green text-xl"></i>
+                        <span class="text-lg">04244006060</span>
+                    </div>
+                </div>
+                
+                <!-- Sección de enlaces a redes sociales -->
+                <div class="mt-8 flex justify-center space-x-6 text-2xl">
+                    <a href="https://github.com/tu-usuario" target="_blank" class="text-dark-text hover:text-accent-blue transition-colors duration-300" aria-label="Perfil de GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="text-dark-text hover:text-accent-blue transition-colors duration-300" aria-label="Perfil de LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/58XXXXXXXXXX" target="_blank" class="text-dark-text hover:text-accent-green transition-colors duration-300" aria-label="Número de WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://facebook.com/tu-perfil" target="_blank" class="text-dark-text hover:text-accent-blue transition-colors duration-300" aria-label="Perfil de Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlaza tu archivo JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
